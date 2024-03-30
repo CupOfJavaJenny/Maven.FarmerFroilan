@@ -2,6 +2,7 @@ package AbstractTest;
 
 import Abstract.Crop;
 import Abstract.FarmVehicle;
+import Interface.Aircraft;
 import Interface.Rideable;
 import Interface.Rider;
 import concreteclass.CropDuster;
@@ -35,15 +36,21 @@ public class FarmVehicleTest {
         @Test
         public void  isTractorRideable() {
             FarmVehicle tractor = new FarmVehicle();
-            Assert.assertTrue(tractor instanceof Rider);
+            Assert.assertTrue(tractor instanceof Rideable);
         }
         @Test
         public void isCropDusterRideable() {
 
         FarmVehicle cropDuster = new FarmVehicle();
-            Assert.assertTrue(cropDuster instanceof Rider);
+            Assert.assertTrue(cropDuster instanceof Rideable);
 
         }
+        @Test
+        public void canCropDusterFly() {
+        FarmVehicle cropDuster = new FarmVehicle();
+        Assert.assertTrue(cropDuster instanceof Aircraft);
+    }
+
 }
 
   
